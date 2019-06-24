@@ -1,6 +1,7 @@
 #include "IPlugMidiEffect.h"
 #include "IPlug_include_in_plug_src.h"
 #include "IControls.h"
+#include "Yoga.h"
 
 IPlugMidiEffect::IPlugMidiEffect(IPlugInstanceInfo instanceInfo)
 : IPLUG_CTOR(kNumParams, kNumPrograms, instanceInfo)
@@ -17,7 +18,43 @@ IPlugMidiEffect::IPlugMidiEffect(IPlugInstanceInfo instanceInfo)
   };
   
   mLayoutFunc = [&](IGraphics* pGraphics) {
+    IRECT bounds = pGraphics->GetBounds();
     
+    auto calculateFlexBox = [](const IRECT& parent, IRECT& bgBounds, IRECT& imageBounds, IRECT& textBounds) {
+      YGConfigRef config = YGConfigNew();
+      YGNodeRef root = YGNodeNewWithConfig(config);
+      YGNodeStyleSetFlexDirection(root, YGFlexDirectionRow);
+      YGNodeStyleSetPadding(root, YGEdgeAll, 20);
+      YGNodeStyleSetMargin(root, YGEdgeAll, 20);
+      
+      YGNodeRef image = YGNodeNew();
+      YGNodeStyleSetWidth(image, 80);
+      YGNodeStyleSetHeight(image, 80);
+      YGNodeStyleSetAlignSelf(image, YGAlignCenter);
+      YGNodeStyleSetMargin(image, YGEdgeEnd, 20);
+      
+      YGNodeRef text = YGNodeNew();
+      YGNodeStyleSetHeight(text, 25);
+      YGNodeStyleSetAlignSelf(text, YGAlignCenter);
+      YGNodeStyleSetFlexGrow(text, 1);
+      
+      YGNodeInsertChild(root, image, 0);
+      YGNodeInsertChild(root, text, 1);
+      
+      YGNodeCalculateLayout(root, parent.W(), parent.H(), YGDirectionLTR);
+      
+      auto ToIRECT = [](YGNodeRef root, YGNodeRef input) {
+        if(input == root) return IRECT(YGNodeLayoutGetLeft(root), YGNodeLayoutGetTop(root), YGNodeLayoutGetLeft(root) + YGNodeLayoutGetWidth(input), YGNodeLayoutGetTop(root) + YGNodeLayoutGetHeight(root));
+        else return IRECT(YGNodeLayoutGetLeft(root) + YGNodeLayoutGetLeft(input), YGNodeLayoutGetTop(root) + YGNodeLayoutGetTop(input), YGNodeLayoutGetLeft(root) + YGNodeLayoutGetLeft(input) + YGNodeLayoutGetWidth(input), YGNodeLayoutGetTop(root) + YGNodeLayoutGetTop(input) + YGNodeLayoutGetHeight(input));
+      };
+      
+      bgBounds = ToIRECT(root, root);
+      imageBounds = ToIRECT(root, image);
+      textBounds = ToIRECT(root, text);
+      YGNodeFreeRecursive(root);
+      YGConfigFree(config);
+    };
+
     auto actionFunc = [&](IControl* pCaller) {
       static bool onoff = false;
       onoff = !onoff;
@@ -37,9 +74,31 @@ IPlugMidiEffect::IPlugMidiEffect(IPlugInstanceInfo instanceInfo)
       SplashClickActionFunc(pCaller);
     };
     
-    pGraphics->LoadFont("Roboto-Regular", ROBOTO_FN);
-    pGraphics->AttachPanelBackground(COLOR_GRAY);
-    pGraphics->AttachControl(new IVButtonControl(pGraphics->GetBounds().GetPadded(-10), actionFunc, "Trigger Chord"));
+    IRECT white, blue, red;
+    calculateFlexBox(bounds, white, blue, red);
+    
+    if(pGraphics->NControls())
+    {
+      pGraphics->GetBackgroundControl()->SetTargetAndDrawRECTs(bounds);
+      pGraphics->GetControlWithTag(0)->SetTargetAndDrawRECTs(white);
+      pGraphics->GetControlWithTag(1)->SetTargetAndDrawRECTs(blue);
+      pGraphics->GetControlWithTag(2)->SetTargetAndDrawRECTs(red);
+      
+      return;
+    }
+    else
+    {
+      pGraphics->LoadFont("Roboto-Regular", ROBOTO_FN);
+      pGraphics->AttachPanelBackground(COLOR_GRAY);
+      pGraphics->AttachCornerResizer(EUIResizerMode::Size, true);
+      
+      pGraphics->AttachControl(new IPanelControl(white, COLOR_WHITE), 0);
+      pGraphics->AttachControl(new IPanelControl(blue, COLOR_BLUE), 1);
+      pGraphics->AttachControl(new IPanelControl(red, COLOR_RED), 2);
+
+
+//      pGraphics->AttachControl(new IVButtonControl(pGraphics->GetBounds().GetPadded(-10), actionFunc, "Trigger Chord"));
+    }
   };
 #endif
 }

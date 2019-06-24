@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0F3B4322B7901400E40AE7 /* YGLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F3B2522B7901200E40AE7 /* YGLayout.cpp */; };
+		4F0F3B4422B7901400E40AE7 /* YGNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F3B2722B7901200E40AE7 /* YGNode.cpp */; };
+		4F0F3B4522B7901400E40AE7 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F3B2B22B7901200E40AE7 /* Utils.cpp */; };
+		4F0F3B4622B7901400E40AE7 /* YGValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F3B2F22B7901300E40AE7 /* YGValue.cpp */; };
+		4F0F3B4722B7901400E40AE7 /* YGNodePrint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F3B3222B7901300E40AE7 /* YGNodePrint.cpp */; };
+		4F0F3B4822B7901400E40AE7 /* YGEnums.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F3B3322B7901300E40AE7 /* YGEnums.cpp */; };
+		4F0F3B4922B7901400E40AE7 /* log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F3B3822B7901300E40AE7 /* log.cpp */; };
+		4F0F3B4A22B7901400E40AE7 /* YGConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F3B3B22B7901300E40AE7 /* YGConfig.cpp */; };
+		4F0F3B4B22B7901400E40AE7 /* Yoga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F3B3D22B7901300E40AE7 /* Yoga.cpp */; };
+		4F0F3B4C22B7901400E40AE7 /* YGStyle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F3B3E22B7901300E40AE7 /* YGStyle.cpp */; };
+		4F0F3B4D22B7901400E40AE7 /* YGMarker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F3B3F22B7901300E40AE7 /* YGMarker.cpp */; };
+		4F0F3B4E22B7901400E40AE7 /* event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F0F3B4222B7901300E40AE7 /* event.cpp */; };
 		4F10E7C020B17EDB00F5B09B /* IPlugMidiEffect-iOS-MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F10E7BF20B17EDB00F5B09B /* IPlugMidiEffect-iOS-MainInterface.storyboard */; };
 		4F1115D12296DAED000CFCBF /* IPlugMidiEffect-iOS-MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F10E7BF20B17EDB00F5B09B /* IPlugMidiEffect-iOS-MainInterface.storyboard */; };
 		4F2602BD2269F0A000C7E97E /* IPlugMidiEffectShared.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2602B22269F00000C7E97E /* IPlugMidiEffectShared.a */; };
@@ -102,6 +114,35 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4F0F3B2522B7901200E40AE7 /* YGLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = YGLayout.cpp; path = ../../../Dependencies/IGraphics/yoga/yoga/YGLayout.cpp; sourceTree = "<group>"; };
+		4F0F3B2622B7901200E40AE7 /* YGNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGNode.h; path = ../../../Dependencies/IGraphics/yoga/yoga/YGNode.h; sourceTree = "<group>"; };
+		4F0F3B2722B7901200E40AE7 /* YGNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = YGNode.cpp; path = ../../../Dependencies/IGraphics/yoga/yoga/YGNode.cpp; sourceTree = "<group>"; };
+		4F0F3B2822B7901200E40AE7 /* YGValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGValue.h; path = ../../../Dependencies/IGraphics/yoga/yoga/YGValue.h; sourceTree = "<group>"; };
+		4F0F3B2922B7901200E40AE7 /* YGNodePrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGNodePrint.h; path = ../../../Dependencies/IGraphics/yoga/yoga/YGNodePrint.h; sourceTree = "<group>"; };
+		4F0F3B2A22B7901200E40AE7 /* YGConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGConfig.h; path = ../../../Dependencies/IGraphics/yoga/yoga/YGConfig.h; sourceTree = "<group>"; };
+		4F0F3B2B22B7901200E40AE7 /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Utils.cpp; path = ../../../Dependencies/IGraphics/yoga/yoga/Utils.cpp; sourceTree = "<group>"; };
+		4F0F3B2C22B7901300E40AE7 /* YGLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGLayout.h; path = ../../../Dependencies/IGraphics/yoga/yoga/YGLayout.h; sourceTree = "<group>"; };
+		4F0F3B2D22B7901300E40AE7 /* YGStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGStyle.h; path = ../../../Dependencies/IGraphics/yoga/yoga/YGStyle.h; sourceTree = "<group>"; };
+		4F0F3B2E22B7901300E40AE7 /* YGFloatOptional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGFloatOptional.h; path = ../../../Dependencies/IGraphics/yoga/yoga/YGFloatOptional.h; sourceTree = "<group>"; };
+		4F0F3B2F22B7901300E40AE7 /* YGValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = YGValue.cpp; path = ../../../Dependencies/IGraphics/yoga/yoga/YGValue.cpp; sourceTree = "<group>"; };
+		4F0F3B3022B7901300E40AE7 /* CompactValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompactValue.h; path = ../../../Dependencies/IGraphics/yoga/yoga/CompactValue.h; sourceTree = "<group>"; };
+		4F0F3B3122B7901300E40AE7 /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = log.h; path = ../../../Dependencies/IGraphics/yoga/yoga/log.h; sourceTree = "<group>"; };
+		4F0F3B3222B7901300E40AE7 /* YGNodePrint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = YGNodePrint.cpp; path = ../../../Dependencies/IGraphics/yoga/yoga/YGNodePrint.cpp; sourceTree = "<group>"; };
+		4F0F3B3322B7901300E40AE7 /* YGEnums.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = YGEnums.cpp; path = ../../../Dependencies/IGraphics/yoga/yoga/YGEnums.cpp; sourceTree = "<group>"; };
+		4F0F3B3422B7901300E40AE7 /* YGEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGEnums.h; path = ../../../Dependencies/IGraphics/yoga/yoga/YGEnums.h; sourceTree = "<group>"; };
+		4F0F3B3522B7901300E40AE7 /* Yoga-internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Yoga-internal.h"; path = "../../../Dependencies/IGraphics/yoga/yoga/Yoga-internal.h"; sourceTree = "<group>"; };
+		4F0F3B3622B7901300E40AE7 /* Yoga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Yoga.h; path = ../../../Dependencies/IGraphics/yoga/yoga/Yoga.h; sourceTree = "<group>"; };
+		4F0F3B3722B7901300E40AE7 /* YGMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGMarker.h; path = ../../../Dependencies/IGraphics/yoga/yoga/YGMarker.h; sourceTree = "<group>"; };
+		4F0F3B3822B7901300E40AE7 /* log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = log.cpp; path = ../../../Dependencies/IGraphics/yoga/yoga/log.cpp; sourceTree = "<group>"; };
+		4F0F3B3922B7901300E40AE7 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = ../../../Dependencies/IGraphics/yoga/yoga/Utils.h; sourceTree = "<group>"; };
+		4F0F3B3A22B7901300E40AE7 /* YGMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YGMacros.h; path = ../../../Dependencies/IGraphics/yoga/yoga/YGMacros.h; sourceTree = "<group>"; };
+		4F0F3B3B22B7901300E40AE7 /* YGConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = YGConfig.cpp; path = ../../../Dependencies/IGraphics/yoga/yoga/YGConfig.cpp; sourceTree = "<group>"; };
+		4F0F3B3C22B7901300E40AE7 /* instrumentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = instrumentation.h; path = ../../../Dependencies/IGraphics/yoga/yoga/instrumentation.h; sourceTree = "<group>"; };
+		4F0F3B3D22B7901300E40AE7 /* Yoga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Yoga.cpp; path = ../../../Dependencies/IGraphics/yoga/yoga/Yoga.cpp; sourceTree = "<group>"; };
+		4F0F3B3E22B7901300E40AE7 /* YGStyle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = YGStyle.cpp; path = ../../../Dependencies/IGraphics/yoga/yoga/YGStyle.cpp; sourceTree = "<group>"; };
+		4F0F3B3F22B7901300E40AE7 /* YGMarker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = YGMarker.cpp; path = ../../../Dependencies/IGraphics/yoga/yoga/YGMarker.cpp; sourceTree = "<group>"; };
+		4F0F3B4122B7901300E40AE7 /* event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = event.h; sourceTree = "<group>"; };
+		4F0F3B4222B7901300E40AE7 /* event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = event.cpp; sourceTree = "<group>"; };
 		4F10E7BF20B17EDB00F5B09B /* IPlugMidiEffect-iOS-MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "IPlugMidiEffect-iOS-MainInterface.storyboard"; path = "../resources/IPlugMidiEffect-iOS-MainInterface.storyboard"; sourceTree = "<group>"; };
 		4F10E7C520B189DD00F5B09B /* IPlugMidiEffect-iOS.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "IPlugMidiEffect-iOS.entitlements"; sourceTree = "<group>"; };
 		4F2020F620A1B2B500F22200 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = scripts; path = ../scripts; sourceTree = "<group>"; };
@@ -288,9 +329,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F0F3B2422B78FEE00E40AE7 /* Yoga */ = {
+			isa = PBXGroup;
+			children = (
+				4F0F3B3022B7901300E40AE7 /* CompactValue.h */,
+				4F0F3B4022B7901300E40AE7 /* event */,
+				4F0F3B3C22B7901300E40AE7 /* instrumentation.h */,
+				4F0F3B3822B7901300E40AE7 /* log.cpp */,
+				4F0F3B3122B7901300E40AE7 /* log.h */,
+				4F0F3B2B22B7901200E40AE7 /* Utils.cpp */,
+				4F0F3B3922B7901300E40AE7 /* Utils.h */,
+				4F0F3B3B22B7901300E40AE7 /* YGConfig.cpp */,
+				4F0F3B2A22B7901200E40AE7 /* YGConfig.h */,
+				4F0F3B3322B7901300E40AE7 /* YGEnums.cpp */,
+				4F0F3B3422B7901300E40AE7 /* YGEnums.h */,
+				4F0F3B2E22B7901300E40AE7 /* YGFloatOptional.h */,
+				4F0F3B2522B7901200E40AE7 /* YGLayout.cpp */,
+				4F0F3B2C22B7901300E40AE7 /* YGLayout.h */,
+				4F0F3B3A22B7901300E40AE7 /* YGMacros.h */,
+				4F0F3B3F22B7901300E40AE7 /* YGMarker.cpp */,
+				4F0F3B3722B7901300E40AE7 /* YGMarker.h */,
+				4F0F3B2722B7901200E40AE7 /* YGNode.cpp */,
+				4F0F3B2622B7901200E40AE7 /* YGNode.h */,
+				4F0F3B3222B7901300E40AE7 /* YGNodePrint.cpp */,
+				4F0F3B2922B7901200E40AE7 /* YGNodePrint.h */,
+				4F0F3B3E22B7901300E40AE7 /* YGStyle.cpp */,
+				4F0F3B2D22B7901300E40AE7 /* YGStyle.h */,
+				4F0F3B2F22B7901300E40AE7 /* YGValue.cpp */,
+				4F0F3B2822B7901200E40AE7 /* YGValue.h */,
+				4F0F3B3522B7901300E40AE7 /* Yoga-internal.h */,
+				4F0F3B3D22B7901300E40AE7 /* Yoga.cpp */,
+				4F0F3B3622B7901300E40AE7 /* Yoga.h */,
+			);
+			name = Yoga;
+			sourceTree = "<group>";
+		};
+		4F0F3B4022B7901300E40AE7 /* event */ = {
+			isa = PBXGroup;
+			children = (
+				4F0F3B4122B7901300E40AE7 /* event.h */,
+				4F0F3B4222B7901300E40AE7 /* event.cpp */,
+			);
+			name = event;
+			path = ../../../Dependencies/IGraphics/yoga/yoga/event;
+			sourceTree = "<group>";
+		};
 		4F3E0F9B20A0C64100A9C2BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4F0F3B2422B78FEE00E40AE7 /* Yoga */,
 				4F63697420A463AF0022C370 /* IGraphics */,
 				4F8028BE20A24F97003A66EC /* NanoVG */,
 				4FFF102F20A0E54C00D3092F /* WDL */,
@@ -694,6 +781,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -758,24 +846,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F2602D72269F3AA00C7E97E /* IPlugTimer.cpp in Sources */,
+				4F0F3B4B22B7901400E40AE7 /* Yoga.cpp in Sources */,
 				4F2602D32269F1A600C7E97E /* IGraphicsNanoVG.cpp in Sources */,
+				4F0F3B4D22B7901400E40AE7 /* YGMarker.cpp in Sources */,
 				4F2602D42269F1A600C7E97E /* IGraphicsNanoVG_src.m in Sources */,
 				4F2602C12269F15000C7E97E /* IGraphicsCoreText.mm in Sources */,
 				4F2602C22269F15000C7E97E /* IGraphicsIOS.mm in Sources */,
 				4F2602C32269F15000C7E97E /* IGraphicsIOS_view.mm in Sources */,
 				4F2602C72269F15000C7E97E /* IGraphics.cpp in Sources */,
+				4F0F3B4422B7901400E40AE7 /* YGNode.cpp in Sources */,
 				4F2602C82269F15000C7E97E /* IGraphicsEditorDelegate.cpp in Sources */,
 				4F2602C92269F15000C7E97E /* IControl.cpp in Sources */,
+				4F0F3B4922B7901400E40AE7 /* log.cpp in Sources */,
 				4F2602C52269F15000C7E97E /* IControls.cpp in Sources */,
 				4F2602C62269F15000C7E97E /* IPopupMenuControl.cpp in Sources */,
+				4F0F3B4E22B7901400E40AE7 /* event.cpp in Sources */,
+				4F0F3B4322B7901400E40AE7 /* YGLayout.cpp in Sources */,
 				4F2602C42269F15000C7E97E /* ITextEntryControl.cpp in Sources */,
 				4F2602CA2269F15000C7E97E /* GenericUI.mm in Sources */,
+				4F0F3B4822B7901400E40AE7 /* YGEnums.cpp in Sources */,
+				4F0F3B4A22B7901400E40AE7 /* YGConfig.cpp in Sources */,
 				4F2602CB2269F15000C7E97E /* IPlugAUAudioUnit.mm in Sources */,
 				4F2602CC2269F15000C7E97E /* IPlugAUv3.mm in Sources */,
 				4F2602CE2269F15000C7E97E /* IPlugPluginBase.cpp in Sources */,
 				4F2602CF2269F15000C7E97E /* IPlugAPIBase.cpp in Sources */,
+				4F0F3B4722B7901400E40AE7 /* YGNodePrint.cpp in Sources */,
+				4F0F3B4C22B7901400E40AE7 /* YGStyle.cpp in Sources */,
+				4F0F3B4522B7901400E40AE7 /* Utils.cpp in Sources */,
 				4F2602D12269F15000C7E97E /* IPlugParameter.cpp in Sources */,
 				4F2602D22269F15000C7E97E /* IPlugPaths.mm in Sources */,
+				4F0F3B4622B7901400E40AE7 /* YGValue.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
