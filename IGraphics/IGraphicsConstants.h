@@ -12,6 +12,9 @@
 
 #include "IPlugPlatform.h"
 
+BEGIN_IPLUG_NAMESPACE
+BEGIN_IGRAPHICS_NAMESPACE
+
 static constexpr int DEFAULT_FPS = 25; // TODO: default 60 FPS?
 
 // If not dirty for this many timer ticks, we call OnGUIIDle.
@@ -118,6 +121,9 @@ static const char* kVColorStrs[kNumDefaultVColors] =
 };
 
 /** /todo */
+enum class EVShape { Rectangle, Ellipse, Triangle, EndsRounded, AllRounded };
+
+/** /todo */
 enum class EWinding { CW, CCW };
 
 /** /todo */
@@ -168,9 +174,10 @@ enum EMsgBoxType
 };
 
 // This enumeration must match win32 message box results
+ //If IGraphics::ShowMessageBox can't return inline, it returns kNoResult (e.g. because it requires an asynchronous call)
 enum EMsgBoxResult
 {
-  kNoResult, //If IGraphics::ShowMessageBox can't return inline (e.g. because it requires an asynchronous call)
+  kNoResult,
   kOK = 1,
   kCANCEL = 2,
   kABORT = 3,
@@ -314,3 +321,6 @@ enum EVirtualKey
   kVK_NUMLOCK =     0x90,
   kVK_SCROLL =      0x91
 };
+
+END_IGRAPHICS_NAMESPACE
+END_IPLUG_NAMESPACE
