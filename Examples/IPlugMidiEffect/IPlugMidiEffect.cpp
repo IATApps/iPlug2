@@ -1,7 +1,7 @@
 #include "IPlugMidiEffect.h"
 #include "IPlug_include_in_plug_src.h"
 #include "IControls.h"
-#include "Yoga.h"
+#include "IGraphicsFlexBox.h"
 
 IPlugMidiEffect::IPlugMidiEffect(const InstanceInfo& info)
 : Plugin(info, MakeConfig(kNumParams, kNumPrograms))
@@ -21,38 +21,14 @@ IPlugMidiEffect::IPlugMidiEffect(const InstanceInfo& info)
     IRECT bounds = pGraphics->GetBounds();
     
     auto calculateFlexBox = [](const IRECT& parent, IRECT& bgBounds, IRECT& imageBounds, IRECT& textBounds) {
-      YGConfigRef config = YGConfigNew();
-      YGNodeRef root = YGNodeNewWithConfig(config);
-      YGNodeStyleSetFlexDirection(root, YGFlexDirectionRow);
-      YGNodeStyleSetPadding(root, YGEdgeAll, 20);
-      YGNodeStyleSetMargin(root, YGEdgeAll, 20);
-      
-      YGNodeRef image = YGNodeNew();
-      YGNodeStyleSetWidth(image, 80);
-      YGNodeStyleSetHeight(image, 80);
-      YGNodeStyleSetAlignSelf(image, YGAlignCenter);
-      YGNodeStyleSetMargin(image, YGEdgeEnd, 20);
-      
-      YGNodeRef text = YGNodeNew();
-      YGNodeStyleSetHeight(text, 25);
-      YGNodeStyleSetAlignSelf(text, YGAlignCenter);
-      YGNodeStyleSetFlexGrow(text, 1);
-      
-      YGNodeInsertChild(root, image, 0);
-      YGNodeInsertChild(root, text, 1);
-      
-      YGNodeCalculateLayout(root, parent.W(), parent.H(), YGDirectionLTR);
-      
-      auto ToIRECT = [](YGNodeRef root, YGNodeRef input) {
-        if(input == root) return IRECT(YGNodeLayoutGetLeft(root), YGNodeLayoutGetTop(root), YGNodeLayoutGetLeft(root) + YGNodeLayoutGetWidth(input), YGNodeLayoutGetTop(root) + YGNodeLayoutGetHeight(root));
-        else return IRECT(YGNodeLayoutGetLeft(root) + YGNodeLayoutGetLeft(input), YGNodeLayoutGetTop(root) + YGNodeLayoutGetTop(input), YGNodeLayoutGetLeft(root) + YGNodeLayoutGetLeft(input) + YGNodeLayoutGetWidth(input), YGNodeLayoutGetTop(root) + YGNodeLayoutGetTop(input) + YGNodeLayoutGetHeight(input));
-      };
-      
-      bgBounds = ToIRECT(root, root);
-      imageBounds = ToIRECT(root, image);
-      textBounds = ToIRECT(root, text);
-      YGNodeFreeRecursive(root);
-      YGConfigFree(config);
+      IFlexBox f;
+      f.Init(YGFlexDirectionRow, YGJustifyCenter, 20.f, 20.f);
+      int a = f.AddChild(10, 30, YGAlignCenter, 0.f);
+      int b = f.AddChild(25, 80, YGAlignCenter, 1.f);
+      f.CalcLayout(parent);
+      bgBounds = f.GetBounds(0);
+      imageBounds = f.GetBounds(a);
+      textBounds = f.GetBounds(b);
     };
 
     auto actionFunc = [&](IControl* pCaller) {
